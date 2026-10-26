@@ -1,3 +1,13 @@
 .linha {
     padding-bottom: 10px;
 }
+
+.linhamensagem {
+    display: flex;
+    align-items: center; /* Alinha a label e o textarea verticalmente ao centro */
+    gap: 10px;
+}
+
+.botoes {
+    padding-top: 20px;
+}
