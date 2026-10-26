@@ -1,91 +1,91 @@
 <!doctype html>
 <html lang="pt-PT">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CESAE Web</title>
     <link rel="stylesheet" href="./estilo.css">
-  </head>
+</head>
 
-  <body>
-    <img
-      src="./img/logotipo_cesae_digital.png"
-      alt="logotipo"
-      width="200"
-      height="100"
-    />
+<body>
+    <img src="./img/logotipo_cesae_digital.png" alt="logotipo" width="200" height="100" />
     <br />
     <a href="https://www.cesaedigital.pt/" target="_blank">Aceder ao CESAE</a>
     <div></div>
     <hr />
     <h1>Sobre o CESAE Digital</h1>
     <p>
-      O CESAE Digital é um centro de excelência dedicado ao desenvolvimento
-      essencial para enfrentar os desafios da transformação digital em Portugal.
+        O CESAE Digital é um centro de excelência dedicado ao desenvolvimento
+        essencial para enfrentar os desafios da transformação digital em Portugal.
     </p>
     <p>
-      O CESAE Digital renasceu em julho de 2020 no quadro dos novos desafios
-      tecnológicos e sociais da digitalização que recomendam a criação de um
-      centro de formação capaz de responder às necessidades qualificação dos
-      recursos humanos indispensáveis para a afirmação de uma estratégia
-      sustentável de crescimento económico e de coesão social, constituindo
-      ainda um instrumento de política pública orientado para a manutenção e
-      melhoria das condições de empregabilidade dos activos empregados e
-      desempregados e para o desenvolvimento da competitivade na economia.
+        O CESAE Digital renasceu em julho de 2020 no quadro dos novos desafios
+        tecnológicos e sociais da digitalização que recomendam a criação de um
+        centro de formação capaz de responder às necessidades qualificação dos
+        recursos humanos indispensáveis para a afirmação de uma estratégia
+        sustentável de crescimento económico e de coesão social, constituindo
+        ainda um instrumento de política pública orientado para a manutenção e
+        melhoria das condições de empregabilidade dos activos empregados e
+        desempregados e para o desenvolvimento da competitivade na economia.
     </p>
     <h2>Objectivos</h2>
     <p>
-      O CESAE Digital é um centro de excelência dedicado ao desenvolvimento
-      essencial para enfrentar os desafios da transformação digital em Portugal.
+        O CESAE Digital é um centro de excelência dedicado ao desenvolvimento
+        essencial para enfrentar os desafios da transformação digital em Portugal.
     </p>
     <ol>
-      <li>Responder às necessidades</li>
-      <li>Potenciar o desenvolvimento</li>
-      <li>Promover a concepção</li>
+        <li>Responder às necessidades</li>
+        <li>Potenciar o desenvolvimento</li>
+        <li>Promover a concepção</li>
     </ol>
 
     <h2>Natureza, atribuições e competências</h2>
     <p>
-      O CESAE Digital é um centro de excelência dedicado ao desenvolvimento
-      essencial para enfrentar os desafios da transformação digital em Portugal.
+        O CESAE Digital é um centro de excelência dedicado ao desenvolvimento
+        essencial para enfrentar os desafios da transformação digital em Portugal.
     </p>
     <ul>
-      <li>Responder às necessidades</li>
-      <li>Potenciar o desenvolvimento</li>
-      <li>Promover a concepção</li>
+        <li>Responder às necessidades</li>
+        <li>Potenciar o desenvolvimento</li>
+        <li>Promover a concepção</li>
     </ul>
     <hr />
-    
+
     <!--Exercício 3: Formulário de contacto-->
 
     <title>Formulário de Contacto</title>
     <form action="#" method="post">
         <fieldset>
             <legend>Formulário de contacto do CESAE</legend>
-            
+
             <div class="linha">
                 <label for="nome">Nome:</label>
                 <input type="text" id="nome" name="nome" placeholder="Insira o seu nome aqui">
             </div>
-            
+
             <div class="linha">
                 <label for="email">Email:</label>
                 <input type="email" id="email" name="email">
             </div>
+
             
-            <div class="linha espaco">
-                <label>Género:</label><br>
-                <input type="radio" id="masculino" name="genero" value="masculino">
-                <label for="masculino">Masculino</label><br>
-                <input type="radio" id="feminino" name="genero" value="feminino">
-                <label for="feminino">Feminino</label>
+
+            <div class="radio-group">
+                <label for="text">Género:</label><br>
+                <label>
+                    <input type="radio" name="opcao" value="Masculino"> Masculino
+                </label>
+                <label>
+                    <input type="radio" name="opcao" value="Feminino"> Feminino
+                </label>
             </div>
-            
-            <div class="linha espaco">
-                <label for="data">Data atual:</label>
-                <input type="date" id="data" name="data">
+
+            <div class="linhadata">
+                <label for="data">Data actual:</label>
+                <input type="datetime-local" id="data" name="data" required>
             </div>
-            
+
             <div class="linha">
                 <label for="turma">Turma:</label>
                 <select id="turma" name="turma">
@@ -94,18 +94,18 @@
                     <option value="web-mobile">Cibersegurança</option>
                 </select>
             </div>
-            
+
             <div class="linhamensagem">
                 <label for="mensagem">Mensagem:</label>
-                <textarea id="mensagem" name="mensagem" rows="3" cols="40"></textarea>
+                <textarea id="mensagem" name="mensagem" rows="3" cols="80"></textarea>
             </div>
-            
+
             <div class="botoes">
                 <input type="reset" value="Limpar">
                 <input type="submit" value="Enviar">
-            </div>   
+            </div>
         </fieldset>
-        
+
     </form>
 
 
@@ -116,7 +116,8 @@
     <img src="./img/footer.png" alt="logotipo" width="800" height="100" />
     <hr />
     <footer>
-      <p>Copyright Bruno 2026</p>
+        <p>Copyright Bruno 2026</p>
     </footer>
-  </body>
+</body>
+
 </html>

@@ -1,13 +1,77 @@
-.linha {
-    padding-bottom: 10px;
-}
-
-.linhamensagem {
+/* Estilo base para todas as linhas do formulário */
+.linha, 
+.linhadata, 
+.linhamensagem, 
+.radio-group {
     display: flex;
-    align-items: center; /* Alinha a label e o textarea verticalmente ao centro */
+    align-items: center;
+    margin-bottom: 12px;
+    padding-left: 20px;
     gap: 10px;
 }
 
-.botoes {
-    padding-top: 20px;
+/* Definir uma largura fixa para os labels garante que 
+   todos os inputs/selects comecem exatamente no mesmo alinhamento vertical */
+.linha label, 
+.linhadata label, 
+.linhamensagem label, 
+.radio-group > label:first-child {
+    min-width: 100px;
+    text-align: right;
+    font-weight: bold;
 }
+
+/* Ajustes específicos para a Mensagem (textarea) */
+.linhamensagem {
+    align-items: flex-start; /* Alinha a label no topo da caixa de texto */
+}
+
+.linhamensagem textarea {
+    resize: vertical;
+    font-family: inherit;
+}
+
+/* Grupo de botões de rádio */
+.radio-group {
+    flex-wrap: wrap;
+}
+
+.radio-group label {
+    min-width: auto; /* Remove a largura mínima para os rótulos internos dos radios */
+    font-weight: normal;
+    cursor: pointer;
+}
+
+/* Botões de Submeter / Limpar */
+.botoes {
+    padding-top: 15px;
+    padding-left: 20px;
+    display: flex;
+    gap: 10px;
+}
+
+body { 
+    background-color: bisque; 
+    padding: 20px; 
+} 
+
+h1{ 
+    text-align: center; 
+} 
+
+#alinhaEsquerda {  
+   text-align: left; 
+} 
+
+#alinhaDireita {  
+    text-align: right; 
+ } 
+
+ header, footer {
+    text-align: center; 
+ }
+
+ p {
+    text-align: justify;
+ }
+
