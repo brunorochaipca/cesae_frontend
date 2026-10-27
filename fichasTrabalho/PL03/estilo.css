@@ -1,21 +1,53 @@
+body {
+    background-color: bisque;
+    margin: 20px;
+}
+
+header,
+footer {
+    text-align: center;
+}
+
+footer,
+nav {
+    background-color: grey;
+    padding: 5px;
+    margin: 10px;
+}
+
+.hiperligacao1,
+.hiperligacao2 {
+    color: white;
+}
+
+/* Animação ao passar por cima de uma ligação */
+a:hover {
+    color: blueviolet
+}
+
+.logo {
+    width: 50%;
+}
+
+
 /* Estilo base para todas as linhas do formulário */
-.linha, 
-.linhadata, 
-.linhamensagem, 
+.linha,
+.linhadata,
+.linhamensagem,
 .radio-group {
     display: flex;
     align-items: center;
     margin-bottom: 12px;
-    padding-left: 20px;
+    padding-left: 10px;
     gap: 10px;
 }
 
 /* Definir uma largura fixa para os labels garante que 
    todos os inputs/selects comecem exatamente no mesmo alinhamento vertical */
-.linha label, 
-.linhadata label, 
-.linhamensagem label, 
-.radio-group > label:first-child {
+.linha label,
+.linhadata label,
+.linhamensagem label,
+.radio-group>label:first-child {
     min-width: 100px;
     text-align: right;
     font-weight: bold;
@@ -23,7 +55,8 @@
 
 /* Ajustes específicos para a Mensagem (textarea) */
 .linhamensagem {
-    align-items: flex-start; /* Alinha a label no topo da caixa de texto */
+    align-items: flex-start;
+    /* Alinha a label no topo da caixa de texto */
 }
 
 .linhamensagem textarea {
@@ -37,41 +70,59 @@
 }
 
 .radio-group label {
-    min-width: auto; /* Remove a largura mínima para os rótulos internos dos radios */
+    min-width: auto;
+    /* Remove a largura mínima para os rótulos internos dos radios */
     font-weight: normal;
     cursor: pointer;
 }
 
-/* Botões de Submeter / Limpar */
 .botoes {
-    padding-top: 15px;
-    padding-left: 20px;
     display: flex;
-    gap: 10px;
+    justify-content: flex-end;
+    /* Alinha os itens à direita */
+    gap: 15px;
+    /* Espaço entre os botões */
+    margin-top: 20px;
 }
 
-body { 
-    background-color: bisque; 
-    padding: 20px; 
-} 
+.botoes input {
+    font-size: 16px;
+    /* Aumenta o tamanho do texto */
+    padding: 12px 24px;
+    /* Aumenta o tamanho geral do botão (altura e largura) */
+    cursor: pointer;
+    /* Muda o cursor para indicar que é clicável */
+    border-radius: 6px;
+    /* (Opcional) Deixa as bordas arredondadas */
+    border: 1px solid #ccc;
+    /* (Opcional) Define uma borda limpa */
+}
 
-h1{ 
-    text-align: center; 
-} 
 
-#alinhaEsquerda {  
-   text-align: left; 
-} 
+h1 {
+    text-align: center;
+}
 
-#alinhaDireita {  
-    text-align: right; 
- } 
+#alinhaEsquerda {
+    text-align: left;
+}
 
- header, footer {
-    text-align: center; 
- }
+#alinhaDireita {
+    text-align: right;
+}
 
- p {
+p {
     text-align: justify;
- }
+}
 
+.p1 {
+    font-family: "Times New Roman", Times, serif;
+}
+
+.p2 {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.p3 {
+    font-family: "Lucida Console", "Courier New", monospace;
+}

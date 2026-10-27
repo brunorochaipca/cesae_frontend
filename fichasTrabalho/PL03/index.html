@@ -6,20 +6,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CESAE Web</title>
     <link rel="stylesheet" href="./estilo.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" /> 
 </head>
 
 <body>
-    <img src="./img/logotipo_cesae_digital.png" alt="logotipo" width="200" height="100" />
+    <header>
+        <img class="logo" src="https://www.cesaedigital.pt/fldrSite/img/cesae-digital-logo.svg" alt="logotipo" />
+    </header>
     <br />
-    <a href="https://www.cesaedigital.pt/" target="_blank">Aceder ao CESAE</a>
+    <nav>
+        <a class="hiperligacao1" href="https://www.cesaedigital.pt/" target="_blank">Aceder ao CESAE</a>
+        <br>
+        <a class="hiperligacao2" href="#formulario">Formulário de contacto</a>
+    </nav>
     <div></div>
     <hr />
     <h1>Sobre o CESAE Digital</h1>
-    <p>
+    <p class="p1"> 
         O CESAE Digital é um centro de excelência dedicado ao desenvolvimento
         essencial para enfrentar os desafios da transformação digital em Portugal.
     </p>
-    <p>
+    <p class="p2"> 
         O CESAE Digital renasceu em julho de 2020 no quadro dos novos desafios
         tecnológicos e sociais da digitalização que recomendam a criação de um
         centro de formação capaz de responder às necessidades qualificação dos
@@ -30,7 +37,7 @@
         desempregados e para o desenvolvimento da competitivade na economia.
     </p>
     <h2>Objectivos</h2>
-    <p>
+    <p class="p3"> 
         O CESAE Digital é um centro de excelência dedicado ao desenvolvimento
         essencial para enfrentar os desafios da transformação digital em Portugal.
     </p>
@@ -53,7 +60,7 @@
     <hr />
 
     <!--Exercício 3: Formulário de contacto-->
-
+    <section id="formulario">
     <title>Formulário de Contacto</title>
     <form action="#" method="post">
         <fieldset>
@@ -69,7 +76,7 @@
                 <input type="email" id="email" name="email">
             </div>
 
-            
+
 
             <div class="radio-group">
                 <label for="text">Género:</label><br>
@@ -107,7 +114,7 @@
         </fieldset>
 
     </form>
-
+</section>
 
 
     <hr />
