@@ -8,6 +8,11 @@ footer {
     text-align: center;
 }
 
+header {
+    position:sticky; top:0;
+    background-color: bisque;
+}
+
 footer,
 nav {
     background-color: grey;
@@ -29,6 +34,9 @@ a:hover {
     width: 50%;
 }
 
+.paragrafos {
+    margin: 20px;
+}
 
 /* Estilo base para todas as linhas do formulário */
 .linha,
@@ -98,6 +106,10 @@ a:hover {
     /* (Opcional) Define uma borda limpa */
 }
 
+.form {
+    padding: 10px;
+    background-color: rgb(255, 255, 255);
+}
 
 h1 {
     text-align: center;
