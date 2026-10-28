@@ -6,7 +6,7 @@
     font-family: "Inter", Helvetica, sans-serif;
 }
 
-/* Float four columns side by side */
+/* Propriedade float - colunas lado a lado */
 .column {
     float: left;
     width: 400px;
@@ -15,22 +15,11 @@
 
 }
 
-/* Remove extra left and right margins, due to padding */
-.row {
-    margin: 0 -5px;
-}
-
-/* Clear floats after the columns */
-.row:after {
-    content: "";
-    display: table;
-    clear: both;
-}
-
-/* Responsive columns */
-@media screen and (max-width: 600px) {
+/* Colunas responsivas */
+@media screen and (max-width: 800px) {
     .column {
-        width: 100%;
+        width: 98%;
+        max-width: 400px;
         display: block;
         padding-top: 10px;
         margin-bottom: 20px;
@@ -38,34 +27,29 @@
     }
 }
 
-/* Style the counter cards */
 .card {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     padding: 16px;
     text-align: center;
     background-color: #f1f1f1;
-    min-height: 300px;
+
+    /* altura do cartão */
+    height: 360px;
+
     border-color: blue;
     border-radius: 10px;
-    border-left-width: 2px;
-    border-left-style: solid;
-    border-bottom-width: 2px;
-    border-bottom-style: solid;
-    border-top-width: 2px;
-    border-top-style: solid;
-    border-right-width: 2px;
-    border-right-style: solid;
-
-
+    border-style: solid;
+    border-width: 3px;
 }
 
 .button {
     background-color: #a0afaa;
-    /* Green */
     border: none;
     color: rgb(80, 75, 75);
-    min-height: 200px;
-    height: 90%;
+
+    /* altura do botão */
+    height: 200px;
+
     width: 90%;
     padding: 20px;
     text-align: center;
@@ -75,4 +59,16 @@
     margin: 4px 2px;
     cursor: pointer;
     border-radius: 4px;
+}
+
+/* Nova classe para a imagem herdar o espaço exato do botão */
+.imagem-substituta {
+    width: 90%;
+    height: 200px;  /* Corresponder à altura do botão */
+    
+    object-fit: cover;  /* Recorta a imagem proporcionalmente se for menor/maior */
+    
+    margin: 4px 2px 0px 2px;
+    border-radius: 4px;
+    display: inline-block;
 }

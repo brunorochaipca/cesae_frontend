@@ -11,11 +11,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
 </head>
 
+
 <body>
     <div class="row">
         <div class="column">
             <div class="card">
-                <button class="button button1">Imagem do cartão</button>
+                <button class="button button1" id="bt1">Imagem do cartão</button>
                 <h3>Francisco</h3>
                 <p>Gosta de tecnologia</p>
             </div>
@@ -23,7 +24,7 @@
 
         <div class="column">
             <div class="card">
-                <button class="button button2">Imagem do cartão</button>
+                <button class="button button2" id="bt2">Imagem do cartão</button>
                 <h3>Sara</h3>
                 <p>Adora música</p>
             </div>
@@ -31,11 +32,52 @@
 
         <div class="column">
             <div class="card">
-                <button class="button button3">Imagem do cartão</button>
+                <button class="button button3" id="bt3">Imagem do cartão</button>
                 <h3>Vitor</h3>
                 <p>Apaixonado por filmes</p>
             </div>
         </div>
 
     </div>
+
 </body>
+
+
+
+<script>
+    const botao1 = document.getElementById('bt1');
+    const botao2 = document.getElementById('bt2');
+    const botao3 = document.getElementById('bt3');
+
+    botao1.addEventListener('click', function () {
+        const novaImagem1 = document.createElement('img');
+        novaImagem1.src = 'https://www.w3schools.com/html/pic_trulli.jpg';
+        novaImagem1.alt = 'Imagem do cartão';
+
+        novaImagem1.className = 'imagem-substituta';
+
+        botao1.replaceWith(novaImagem1);
+    });
+
+    botao2.addEventListener('click', function () {
+        const novaImagem2 = document.createElement('img');
+
+        novaImagem2.src = 'https://www.w3schools.com/html/img_girl.jpg';
+        novaImagem2.alt = 'Imagem do cartão';
+
+        novaImagem2.className = 'imagem-substituta';
+
+        botao2.replaceWith(novaImagem2);
+    });
+
+    botao3.addEventListener('click', function () {
+        const novaImagem3 = document.createElement('img');
+
+        novaImagem3.src = 'https://www.w3schools.com/html/img_chania.jpg';
+        novaImagem3.alt = 'Imagem do cartão';
+
+        novaImagem3.className = 'imagem-substituta';
+
+        botao3.replaceWith(novaImagem3);
+    });
+</script>
