@@ -69,17 +69,23 @@ nav a {
     background-color: #b8006a;
 }
 
+main {
+    margin-left: 40px;
+}
+
 main section {
     padding: 28px 0;
 }
 
 h2 {
-    margin: 0 0 16px;
+    margin: 0 16px 24px 16px;
 }
 
 .cartoes {
     display: flex;
     gap: 24px;
+    width: fit-content;
+    margin: 0 auto;
 }
 
 .cartao {
