@@ -184,3 +184,7 @@ footer {
 footer p {
     margin: 0;
 }
+
+a:hover {
+    color: #b8006a;
+}
