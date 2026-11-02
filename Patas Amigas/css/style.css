@@ -77,6 +77,14 @@ main section {
     padding: 28px 0;
 }
 
+a:hover {
+    color: #b8006a;
+}
+
+li {
+    padding-bottom: 10px;
+}
+
 h2 {
     margin: 0 16px 24px 16px;
 }
@@ -109,10 +117,6 @@ h2 {
 
 .cartao h3 {
     margin: 12px 0 4px;
-}
-
-.cartao p {
-    margin: 0;
 }
 
 .selo {
@@ -154,7 +158,7 @@ form {
 
 label {
     display: block;
-    margin-top: 12px;
+    margin-top: 25px;
     font-weight: bold;
 }
 
@@ -183,8 +187,4 @@ footer {
 
 footer p {
     margin: 0;
-}
-
-a:hover {
-    color: #b8006a;
 }
