@@ -1,0 +1,14 @@
+
+        .custom-header {
+            background-color: #3a3f44;
+        }
+        .custom-alert {
+            background-color: #fbf0ce; 
+            color: #7b6321;
+        }
+        .btn-success-custom {
+            background-color: #34a853;
+        }
+        .btn-danger-custom {
+            background-color: #ea4335;
+        }
