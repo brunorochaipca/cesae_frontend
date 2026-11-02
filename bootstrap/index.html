@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+
+    <link rel="stylesheet" type="text/css" href="estilo.css">
+</head>
+
+<body>
+    <div class="container text-center my-4">
+        <h1>Isto é um teste!</h1>
+
+        <div class="row justify-content-center mt-4">
+            <div class="col-md-8">
+                <div class="card text-bg-primary mb-3 w-100">
+                    <div class="card-header">Autor</div>
+                    <div class="card-body">
+                        <p class="card-text">Bruno Rocha</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="col-md-4">
+                <div class="card text-bg-info mb-3 w-100">
+                    <div class="card-header">Profissão</div>
+                    <div class="card-body">
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the card’s content.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card text-bg-info mb-3 w-100">
+                    <div class="card-header">Hobbies</div>
+                    <div class="card-body">
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the card’s content.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+
+
+
+    <div class="container-fluid p-0">
+
+        <div class="row g-0">
+            <div class="col-12">
+                <div class="custom-header text-white text-center py-3 fs-2 mb-3">
+                    Bad News
+                </div>
+            </div>
+        </div>
+
+
+        <div class="container-fluid px-3">
+
+            <div class="row">
+                <div class="col-12">
+                    <div class="alert custom-alert border-0 rounded-1 py-4" role="alert">
+                        You are going to die!
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="row mt-1">
+                <div class="col-3">
+                    <button type="button" class="btn btn-success text-white border-0 rounded-1 px-3 py-2 w-100"
+                        id="agreed">
+                        Come To Terms With
+                    </button>
+
+
+                </div>
+                <div class="col-3" id="danger">
+                    <button type="button" class="btn btn-danger text-white border-0 rounded-1 px-3 py-2 w-100"
+                        id="denied">
+                        Continue To Deny
+                    </button>
+                </div>
+            </div>
+
+        </div>
+
+        <div id="liveAlertPlaceholder" class="position-fixed bottom-0 end-0 p-3" style="z-index: 1050;"></div>
+
+    </div>
+
+</body>
+
+<script>
+    const alertPlaceholder = document.getElementById('liveAlertPlaceholder')
+
+    const appendAlert = (message, type) => {
+        const wrapper = document.createElement('div')
+        wrapper.innerHTML = [
+            `<div class="alert alert-${type} alert-dismissible" role="alert">`,
+            `   <div>${message}</div>`,
+            '   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>',
+            '</div>'
+        ].join('')
+
+        alertPlaceholder.append(wrapper)
+    }
+
+    const agreedmsg = document.getElementById('agreed')
+    const deniedmsg = document.getElementById('denied')
+
+    if (agreedmsg) {
+        agreedmsg.addEventListener('click', () => {
+            appendAlert('Aceitar torna mais fácil!', 'success')
+        })
+    }
+
+    if (deniedmsg) {
+        deniedmsg.addEventListener('click', () => {
+            appendAlert('É inevitável, ACEITA!', 'danger')
+        })
+    }
+
+</script>
+
+</html>
