@@ -3,16 +3,28 @@
 }
 
 body {
+    margin: 0;
     font-family: Arial, Helvetica, sans-serif;
     color: #1d1148;
     background-color: #f7f7f9;
 }
 
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 16px;
+}
+
+
+/* Cabeçalho */
+
 .cabecalho {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    padding: 16px 0;
+    padding-top: 16px;
+    padding-bottom: 16px;
 }
 
 .logo {
@@ -27,7 +39,8 @@ body {
 
 nav ul {
     display: flex;
-    gap: 28px;
+    flex-wrap: wrap;
+    gap: 0 28px;
     margin: 0;
     padding: 0;
     list-style: none;
@@ -38,11 +51,18 @@ nav a {
     text-decoration: none;
 }
 
+a:hover {
+    color: #b8006a;
+}
+
+
+/* Destaque */
+
 .destaque {
     background-color: #1d1148;
     color: #fff;
     text-align: center;
-    padding: 48px 16px;
+    padding: 48px 0;
 }
 
 .destaque h1 {
@@ -56,12 +76,9 @@ nav a {
 .botao {
     display: inline-block;
     background-color: #e40084;
-    color: white;
-    border: none;
+    color: #fff;
     border-radius: 24px;
     padding: 10px 22px;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 16px;
     text-decoration: none;
 }
 
@@ -69,47 +86,36 @@ nav a {
     background-color: #b8006a;
 }
 
-main {
-    margin-left: 40px;
-}
 
-main section {
+/* Animais */
+
+#animais {
     padding: 28px 0;
 }
 
-a:hover {
-    color: #b8006a;
-}
-
-li {
-    padding-bottom: 10px;
-}
-
-h2 {
+#animais h2 {
     margin: 0 16px 24px 16px;
 }
 
 .cartoes {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 24px;
-    width: fit-content;
-    margin: 0 auto;
 }
 
 .cartao {
     position: relative;
-    flex-shrink: 0;
     width: 300px;
     padding: 16px;
     border: 3px solid #1d1148;
     border-radius: 20px;
-    background-color: #fff;
-    box-shadow: 0 4px 10px rgba(29, 17, 72, 0.12);
+    background-color: white;
     text-align: center;
+    box-shadow: 3px 3px 3px gray;
 }
 
 .cartao img {
-    display: block;
     width: 100%;
     height: auto;
     border-radius: 12px;
@@ -118,6 +124,7 @@ h2 {
 .cartao h3 {
     margin: 12px 0 4px;
 }
+
 
 .selo {
     position: absolute;
@@ -130,41 +137,80 @@ h2 {
     font-size: 12px;
 }
 
-table {
+
+/* Como adotar */
+
+#adotar {
+    padding: 28px 0;
+}
+
+#adotar h2 {
+    margin: 0 16px 24px 16px;
+}
+
+#adotar li {
+    padding-bottom: 10px;
+}
+
+
+/* Visitas */
+
+#visitas {
+    padding: 28px 0;
+}
+
+#visitas h2 {
+    margin: 0 16px 24px 16px;
+}
+
+#visitas table {
     width: 100%;
     max-width: 500px;
+    margin-left: 16px;
     border-collapse: collapse;
     background-color: #fff;
 }
 
-th,
-td {
+#visitas th,
+#visitas td {
     border: 1px solid #1d1148;
     padding: 10px 14px;
     text-align: left;
 }
 
-thead {
+#visitas thead {
     background-color: #1d1148;
     color: #fff;
 }
 
-form {
+
+/* Contacto */
+
+#contacto {
+    padding: 28px 0;
+}
+
+#contacto h2 {
+    margin: 0 16px 24px 16px;
+}
+
+#contacto form {
     max-width: 500px;
+    margin-left: 16px;
     padding: 20px;
     background-color: #fff;
     border-radius: 16px;
 }
 
-label {
+#contacto label {
     display: block;
     margin-top: 25px;
     font-weight: bold;
 }
 
-input,
-select,
-textarea {
+#contacto input,
+#contacto select,
+#contacto textarea {
     width: 100%;
     margin-top: 4px;
     padding: 8px;
@@ -174,17 +220,19 @@ textarea {
     font-size: 16px;
 }
 
-form .botao {
+#contacto .botao {
     margin-top: 16px;
+    border: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
 }
+
+
+/* Rodapé */
 
 footer {
     background-color: #1d1148;
     color: #fff;
     text-align: center;
-    padding: 16px;
-}
-
-footer p {
-    margin: 0;
+    padding: 16px 0;
 }
