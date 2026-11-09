@@ -2,150 +2,114 @@
 <html lang="pt">
 
 <head>
-<style>
-    /* Moving things down a bit */
-.container {
-  margin-top: 30px;
-}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Calcular média</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            max-width: 24rem;
+            margin: 2rem auto;
+        }
 
-/* Adding some color to the remove button */
+        label {
+            display: block;
+            margin-top: 0.75rem;
+        }
 
-span.glyphicon-remove {
-  color: #AA0000;
-}
+        input {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 0.4rem;
+        }
 
-/* Make first remove button grey */
+        button {
+            margin-top: 1rem;
+        }
 
-div.col-sm-2:first-child span.glyphicon-remove {
-  color: #eeeeee;
-}
-
-/* Spacing things out a bit */
-
-span.glyphicon-plus {
-  padding-right: 3px;
-}
-
-
-/* Removing the default underline */
-
-.btn-link:hover {
-  text-decoration: none;
-}
-</style>
+        #resultado {
+            font-weight: bold;
+        }
+    </style>
 </head>
 
-
-
 <body>
-    <div class="container">
-        <div class="panel panel-primary">
-            <div class="panel-heading">
-                <h3 class="panel-title">Dynamic Inputs</h3>
-            </div>
-            <div class="panel-body">
-                <div class="row">
-                    <div class="col-sm-12">
-                        <div class="row" id="target">
-                            <div class="col-sm-2">
-                                <div class="input-group">
-                                    <input class="form-control">
-                                    <span class="input-group-btn">
-                                        <button class="btn btn-sm btn-link removeBtn">
-                                            <span class="glyphicon glyphicon-remove"></span>
-                                        </button>
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row pull-right">
-                            <div class="col-xs-1">
-                                <button class="btn btn-link btn-sm" id="add"><span class="glyphicon glyphicon-plus"></span>
-                                    Add Field</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    <h1>Calcular média</h1>
 
+    <label for="quantidade">Quantos números?</label>
+    <input type="number" id="quantidade" min="1" max="20" value="3">
+
+    <div id="campos"></div>
+
+    <button type="button" onclick="calcularMedia()">Calcular média</button>
+    <p id="resultado"></p>
 
     <script>
-        var target = $("div#target");
-        var n = function () {
-            return $("div.col-xs-2").length;
-        };
-        var newInput = function () {
-            var div = $("<div/>", {
-                "class": "input-group"
-            });
-            var input = $("<input>", {
-                "class": "form-control"
-            });
-            var span = $("<span/>", {
-                "class": "input-group-btn"
-            });
-            var button = $("<button/>", {
-                "class": "removeBtn btn btn-sm btn-link",
-                type: "button",
-                id: n()
-            });
-            var glyph = $("<span/>", {
-                "class": "glyphicon glyphicon-remove"
-            });
-            var col = $("<div/>", {
-                "class": "form-group col-xs-2",
-                id: "newInput-" + n()
-            });
+        var quantidade = document.getElementById("quantidade");
+        var campos = document.getElementById("campos");
+        var resultado = document.getElementById("resultado");
 
-            $(glyph).appendTo(button);
-            $(button).appendTo(span);
-            $(input).appendTo(div);
-            $(span).appendTo(div);
-            $(div).appendTo(col);
-            return col;
-        };
+        function criarCampos() {
+            var total = Number(quantidade.value);
 
-        $('button#add').on('click', function () {
-            $(newInput()).appendTo(target);
-        });
+            campos.innerHTML = "";
+            resultado.textContent = "";
 
-        $('#target').on('click', 'button', function () {
-            var target = $("#target").find("#newInput-" + this.id);
-            $(target).remove();
-        });
-    </script>
-
-
-    <script>
-        function calcularMedia() {
-            const inputs = [
-                document.getElementById("integerInput1").value,
-                document.getElementById("integerInput2").value,
-                document.getElementById("integerInput3").value
-            ];
-
-            if (inputs.some(v => v.trim() === "")) {
-                document.getElementById("resultado").textContent = "Por favor, preencha todos os campos.";
+            if (!Number.isInteger(total) || total < 1 || total > 20) {
+                resultado.textContent = "Escolha entre 1 e 20 números.";
                 return;
             }
 
-            const numeros = inputs.map(v => parseFloat(v));
-            if (numeros.some(isNaN)) {
-                document.getElementById("resultado").textContent = "Insira apenas números válidos.";
-                return;
+            for (var i = 1; i <= total; i++) {
+                var label = document.createElement("label");
+                label.htmlFor = "numero" + i;
+                label.textContent = "Número " + i;
+
+                var input = document.createElement("input");
+                input.type = "number";
+                input.id = "numero" + i;
+                input.step = "any";
+
+                campos.appendChild(label);
+                campos.appendChild(input);
             }
-
-            const media = numeros.reduce((acc, val) => acc + val, 0) / numeros.length;
-
-            document.getElementById("resultado").textContent = `A média é: ${media.toFixed(2)}`;
         }
+
+        function calcularMedia() {
+            var inputs = campos.querySelectorAll("input");
+            var valores = [];
+            var i;
+
+            if (inputs.length === 0) {
+                resultado.textContent = "Escolha entre 1 e 20 números.";
+                return;
+            }
+
+            for (i = 0; i < inputs.length; i++) {
+                valores.push(inputs[i].value);
+            }
+
+            if (valores.some(function (v) { return v.trim() === ""; })) {
+                resultado.textContent = "Por favor, preencha todos os campos.";
+                return;
+            }
+
+            var numeros = valores.map(function (v) { return parseFloat(v); });
+            if (numeros.some(isNaN)) {
+                resultado.textContent = "Insira apenas números válidos.";
+                return;
+            }
+
+            var soma = numeros.reduce(function (acc, val) { return acc + val; }, 0);
+            var media = soma / numeros.length;
+
+            resultado.textContent = "A média é: " + media.toFixed(2);
+        }
+
+        quantidade.addEventListener("input", criarCampos);
+        criarCampos();
+
     </script>
 </body>
 
-
 </html>
-
-
-
