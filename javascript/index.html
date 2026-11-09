@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+<style>
+    /* Moving things down a bit */
+.container {
+  margin-top: 30px;
+}
+
+/* Adding some color to the remove button */
+
+span.glyphicon-remove {
+  color: #AA0000;
+}
+
+/* Make first remove button grey */
+
+div.col-sm-2:first-child span.glyphicon-remove {
+  color: #eeeeee;
+}
+
+/* Spacing things out a bit */
+
+span.glyphicon-plus {
+  padding-right: 3px;
+}
+
+
+/* Removing the default underline */
+
+.btn-link:hover {
+  text-decoration: none;
+}
+</style>
+</head>
+
+
+
+<body>
+    <div class="container">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h3 class="panel-title">Dynamic Inputs</h3>
+            </div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="row" id="target">
+                            <div class="col-sm-2">
+                                <div class="input-group">
+                                    <input class="form-control">
+                                    <span class="input-group-btn">
+                                        <button class="btn btn-sm btn-link removeBtn">
+                                            <span class="glyphicon glyphicon-remove"></span>
+                                        </button>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row pull-right">
+                            <div class="col-xs-1">
+                                <button class="btn btn-link btn-sm" id="add"><span class="glyphicon glyphicon-plus"></span>
+                                    Add Field</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        var target = $("div#target");
+        var n = function () {
+            return $("div.col-xs-2").length;
+        };
+        var newInput = function () {
+            var div = $("<div/>", {
+                "class": "input-group"
+            });
+            var input = $("<input>", {
+                "class": "form-control"
+            });
+            var span = $("<span/>", {
+                "class": "input-group-btn"
+            });
+            var button = $("<button/>", {
+                "class": "removeBtn btn btn-sm btn-link",
+                type: "button",
+                id: n()
+            });
+            var glyph = $("<span/>", {
+                "class": "glyphicon glyphicon-remove"
+            });
+            var col = $("<div/>", {
+                "class": "form-group col-xs-2",
+                id: "newInput-" + n()
+            });
+
+            $(glyph).appendTo(button);
+            $(button).appendTo(span);
+            $(input).appendTo(div);
+            $(span).appendTo(div);
+            $(div).appendTo(col);
+            return col;
+        };
+
+        $('button#add').on('click', function () {
+            $(newInput()).appendTo(target);
+        });
+
+        $('#target').on('click', 'button', function () {
+            var target = $("#target").find("#newInput-" + this.id);
+            $(target).remove();
+        });
+    </script>
+
+
+    <script>
+        function calcularMedia() {
+            const inputs = [
+                document.getElementById("integerInput1").value,
+                document.getElementById("integerInput2").value,
+                document.getElementById("integerInput3").value
+            ];
+
+            if (inputs.some(v => v.trim() === "")) {
+                document.getElementById("resultado").textContent = "Por favor, preencha todos os campos.";
+                return;
+            }
+
+            const numeros = inputs.map(v => parseFloat(v));
+            if (numeros.some(isNaN)) {
+                document.getElementById("resultado").textContent = "Insira apenas números válidos.";
+                return;
+            }
+
+            const media = numeros.reduce((acc, val) => acc + val, 0) / numeros.length;
+
+            document.getElementById("resultado").textContent = `A média é: ${media.toFixed(2)}`;
+        }
+    </script>
+</body>
+
+
+</html>
+
+
+
