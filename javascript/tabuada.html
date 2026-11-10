@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Gerador de Tabuada</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            max-width: 24rem;
+            margin: 2rem auto;
+        }
+
+        label {
+            display: block;
+            margin-top: 0.75rem;
+        }
+
+        input {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 0.4rem;
+        }
+
+        button {
+            margin-top: 1rem;
+        }
+
+        #media {
+            font-weight: bold;
+        }
+
+        #tabuada p {
+            margin: 0.25rem 0;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Gerador de Tabuada</h1>
+
+    <label for="nome">Insira o nome:</label>
+    <input type="text" id="nome" required>
+
+    <label for="nota">Nota do teste:</label>
+    <input type="number" id="nota" required>
+
+    <label for="notaprojecto">Nota do projecto:</label>
+    <input type="number" id="notaprojecto" required>
+
+    <button type="button" onclick="calcularMedia()">Calcular a média</button>
+
+    <p id="media"></p>
+    <div id="tabuada"></div>
+
+    <script>
+        function calcularMedia() {
+            var nota = parseInt(document.getElementById("nota").value, 10);
+            var notaprojecto = parseInt(document.getElementById("notaprojecto").value, 10);
+            var nome = document.getElementById("nome").value.trim();
+            var mediaEl = document.getElementById("media");
+            var tabuadaEl = document.getElementById("tabuada");
+            var inputValue;
+            var i;
+            var linha;
+
+            tabuadaEl.innerHTML = "";
+
+            if (!nome || isNaN(nota) || isNaN(notaprojecto)) {
+                mediaEl.textContent = "Preencha o nome e as duas notas.";
+                mediaEl.style.color = "red";
+                return;
+            }
+
+            inputValue = Math.floor((nota + notaprojecto) / 2);
+            mediaEl.textContent = "A média do " + nome + " é " + inputValue;
+            mediaEl.style.color = inputValue < 10 ? "red" : "green";
+
+            if (inputValue >= 1 && inputValue <= 20) {
+                for (i = 1; i <= 10; i++) {
+                    linha = document.createElement("p");
+                    linha.textContent = i + " * " + inputValue + " = " + (i * inputValue);
+                    tabuadaEl.appendChild(linha);
+                }
+            } else {
+                tabuadaEl.textContent = "Só pode ser um valor dentro de 1 a 20";
+            }
+        }
+    </script>
+</body>
+
+</html>
